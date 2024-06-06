@@ -2,7 +2,7 @@
 'use client'
 import { useState } from 'react';
 import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
-import {auth} from 'app/firebase/config'
+import {auth} from '/app/firebase/config'
 
 
 const SignUp = () => {
@@ -10,8 +10,6 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
 
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
-
- 
 
   const handleSignUp = async() => {
     // e.preventDefault();
@@ -33,7 +31,7 @@ const SignUp = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
       <div className="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
-       
+       <form onSubmit={handleSignUp}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-300">
               Email
@@ -61,13 +59,13 @@ const SignUp = () => {
             />
           </div>
           <button
-            
-            onClick={handleSignUp}
+            type="submit"
+            // onClick={handleSignUp}
             className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-md focus:outline-none focus:ring focus:ring-indigo-500"
           >
             Sign Up
           </button>
-          
+          </form>
       </div>
     </div>
   );

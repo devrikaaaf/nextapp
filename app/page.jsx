@@ -1,14 +1,11 @@
 import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Home() {
     return ( 
         
 
-        <main className={styles.main}>
-            <Image src="https://images.unsplash.com/photo-1627843240167-b1f9d28f732e"
-            alt="Picture of a triangle"
-            width={500}
-            height={500}/>
+      <main className={styles.main}>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
